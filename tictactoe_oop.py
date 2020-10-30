@@ -7,9 +7,6 @@ class TicTacToe:
     board = [" "] * 10
     player = 0
 
-    def __init__(self):
-        pass
-
     def display_board(self):
         for i in range(9):
             print(" %s "%(str(self.board[i])),end="")
@@ -18,7 +15,7 @@ class TicTacToe:
                 continue
             print("|",end="")
     
-    def place_marker(self, marker,position):
+    def place_marker(self, marker, position):
         position = int(position)
         self.board[position] = marker
         return self.board
@@ -98,7 +95,7 @@ class TicTacToe:
                     continue
 
             clear_output()
-            self.display_board()
+            self.display_board(self.board)
 
             if self.win_check(player_marker[self.player]) or self.boardfull_check():
                 if self.reply():
